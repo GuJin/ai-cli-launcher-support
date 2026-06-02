@@ -1,0 +1,73 @@
+name: Bug report
+description: Report a reproducible problem with AI CLI Launcher
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please include enough environment details for terminal launch issues to be reproduced.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: AI CLI Launcher version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: ide-version
+    attributes:
+      label: JetBrains IDE and version
+      placeholder: "IntelliJ IDEA 2025.2, Android Studio Narwhal 2025.1.1, etc."
+    validations:
+      required: true
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "macOS 15.5"
+    validations:
+      required: true
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal app and version
+      placeholder: "Ghostty, iTerm2, Terminal.app, Warp, WezTerm, Alacritty, Kitty"
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Configured command
+      placeholder: "codex, claude, qwen, or a custom wrapper script"
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a project
+        2. Click AI CLI Launcher
+        3. Choose ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: debug-report
+    attributes:
+      label: Debug report
+      description: Paste the Settings > Tools > AI CLI Launcher > Copy Debug Report output when relevant. Remove anything sensitive before posting.
+      render: text
+    validations:
+      required: false
