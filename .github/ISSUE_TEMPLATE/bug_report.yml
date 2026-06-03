@@ -5,42 +5,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a problem. Please include enough environment details for terminal launch issues to be reproduced.
-  - type: input
-    id: plugin-version
+        Thanks for reporting a problem. The Debug report at the bottom already includes
+        your plugin version, IDE, macOS version, terminal, and configured commands, so
+        there is no need to type any of those in separately.
+  - type: checkboxes
+    id: preflight
     attributes:
-      label: AI CLI Launcher version
-      placeholder: "1.0.0"
-    validations:
-      required: true
-  - type: input
-    id: ide-version
-    attributes:
-      label: JetBrains IDE and version
-      placeholder: "IntelliJ IDEA 2025.2, Android Studio Narwhal 2025.1.1, etc."
-    validations:
-      required: true
-  - type: input
-    id: macos-version
-    attributes:
-      label: macOS version
-      placeholder: "macOS 15.5"
-    validations:
-      required: true
-  - type: input
-    id: terminal
-    attributes:
-      label: Terminal app and version
-      placeholder: "Ghostty, iTerm2, Terminal.app, Warp, WezTerm, Alacritty, Kitty"
-    validations:
-      required: true
-  - type: input
-    id: command
-    attributes:
-      label: Configured command
-      placeholder: "codex, claude, qwen, or a custom wrapper script"
-    validations:
-      required: false
+      label: Preflight
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
   - type: textarea
     id: steps
     attributes:
@@ -67,7 +41,7 @@ body:
     id: debug-report
     attributes:
       label: Debug report
-      description: Paste the Settings > Tools > AI CLI Launcher > Copy Debug Report output when relevant. Remove anything sensitive before posting.
+      description: Paste the Settings > Tools > AI CLI Launcher > Copy Debug Report output. It includes plugin version, IDE, macOS, terminal, and command checks. Remove anything sensitive before posting.
       render: text
     validations:
-      required: false
+      required: true
